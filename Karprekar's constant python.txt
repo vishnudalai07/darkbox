@@ -1,0 +1,27 @@
+import math
+print("KARPREKAR's Constant")
+def func(a):
+    print('number of iterations: ',a)
+    return a
+k=0
+x=input('Enter a four digit number: ')
+x=int(x)
+for j in range(10):
+    
+    arr=[]
+    for i in range(0,4):
+        arr.append(math.floor(x%10))
+        x=x/10
+    
+    arr.sort()
+    l=arr[0]*1000+arr[1]*100+arr[2]*10+arr[3]
+    arr.reverse()
+    m=arr[0]*1000+arr[1]*100+arr[2]*10+arr[3]
+    s=m-l
+    x=s
+    k=k+1
+    print(k,': ',m,'-',l,'=',s)
+    if(s==6174):
+        func(k)
+        break
+    
