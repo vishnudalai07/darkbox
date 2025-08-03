@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Designer Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <i class="fas fa-magic"></i>
+                    Amazing Designer Web App
+                </h1>
+                <p class="subtitle">Submit your Google Drive folder and job description to get amazing results</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="form-section">
+                <form id="designerForm" class="designer-form">
+                    <div class="form-group">
+                        <label for="driveLink" class="form-label">
+                            <i class="fab fa-google-drive"></i>
+                            Google Drive Folder Link
+                        </label>
+                        <input 
+                            type="url" 
+                            id="driveLink" 
+                            name="driveLink" 
+                            class="form-input" 
+                            placeholder="https://drive.google.com/drive/folders/..."
+                            required
+                        >
+                        <div class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Paste your Google Drive folder sharing link here
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobDescription" class="form-label">
+                            <i class="fas fa-briefcase"></i>
+                            Job Description
+                        </label>
+                        <textarea 
+                            id="jobDescription" 
+                            name="jobDescription" 
+                            class="form-textarea" 
+                            placeholder="Describe the job requirements, skills needed, and any specific details..."
+                            rows="6"
+                            required
+                        ></textarea>
+                        <div class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Provide detailed information about the job for better results
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="webhookUrl" class="form-label">
+                            <i class="fas fa-link"></i>
+                            Webhook URL
+                        </label>
+                        <input 
+                            type="url" 
+                            id="webhookUrl" 
+                            name="webhookUrl" 
+                            class="form-input" 
+                            placeholder="https://your-webhook-endpoint.com/api/process"
+                            required
+                        >
+                        <div class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Enter the webhook URL to send the data to
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Submit & Process</span>
+                        <div class="btn-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Processing...
+                        </div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2 class="results-title">
+                        <i class="fas fa-table"></i>
+                        Results
+                    </h2>
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download CSV
+                    </button>
+                </div>
+                
+                <div class="table-container">
+                    <div id="tableWrapper" class="table-wrapper">
+                        <!-- Table will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Oops! Something went wrong</h3>
+                    <p id="errorText"></p>
+                    <button id="retryBtn" class="retry-btn">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Amazing Designer Web App. Built with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
